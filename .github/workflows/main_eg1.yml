@@ -16,11 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up .NET Core
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '8.x'
-          include-prerelease: true
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.100-preview.7'  # Specify the exact preview version if known
+        include-prerelease: true
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
